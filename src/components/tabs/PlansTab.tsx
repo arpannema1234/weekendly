@@ -1,5 +1,5 @@
 import PlanManager from "../layout/PlanManager";
-import { useWeekendPlannerContext } from "../../contexts/WeekendPlannerContext";
+import { useSchedulePlannerContext } from "../../contexts/SchedulePlannerContext";
 
 interface PlansTabProps {}
 
@@ -11,7 +11,7 @@ const PlansTab: React.FC<PlansTabProps> = () => {
         savePlan,
         deleteSavedPlan,
         duplicatePlan,
-    } = useWeekendPlannerContext();
+    } = useSchedulePlannerContext();
     // Handle the case when currentPlan is null
     if (!currentPlan) {
         return (

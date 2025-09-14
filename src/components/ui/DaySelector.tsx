@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useWeekendPlannerContext } from "../../contexts/WeekendPlannerContext";
+import { useSchedulePlannerContext } from "../../contexts/SchedulePlannerContext";
 import { Plus, X } from "lucide-react";
 import ConfirmationDialog from "./ConfirmationDialog";
 import "./DaySelector.css";
@@ -19,7 +19,7 @@ const DaySelector: React.FC<DaySelectorProps> = ({
         removeDay,
         dayHasActivities,
         getDayActivityCount,
-    } = useWeekendPlannerContext();
+    } = useSchedulePlannerContext();
     const [confirmDialog, setConfirmDialog] = useState<{
         isOpen: boolean;
         dateKey: string;

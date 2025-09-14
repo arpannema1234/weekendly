@@ -1,5 +1,5 @@
 import Calendar from "../layout/Calendar";
-import { useWeekendPlannerContext } from "../../contexts/WeekendPlannerContext";
+import { useSchedulePlannerContext } from "../../contexts/SchedulePlannerContext";
 
 interface CalendarTabProps {
     selectedDates: string[];
@@ -12,7 +12,7 @@ const CalendarTab: React.FC<CalendarTabProps> = ({
     onDateSelect,
     onSwitchToActivities,
 }) => {
-    const { createNewPlan } = useWeekendPlannerContext();
+    const { createNewPlan } = useSchedulePlannerContext();
 
     const handleCreatePlan = (
         startDate: string,

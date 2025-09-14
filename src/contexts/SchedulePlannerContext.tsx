@@ -118,9 +118,9 @@ interface SchedulePlannerProviderProps {
     children: ReactNode;
 }
 
-export const SchedulePlannerProvider: React.FC<
-    SchedulePlannerProviderProps
-> = ({ children }) => {
+export const SchedulePlannerProvider: React.FC<SchedulePlannerProviderProps> = ({
+    children,
+}) => {
     const [savedPlans, setSavedPlans] = useState<WeekendPlan[]>(() => {
         // Load saved plans from localStorage
         const saved = localStorage.getItem("schedule-forge-saved-plans");

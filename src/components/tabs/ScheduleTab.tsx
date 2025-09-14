@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ScheduleView from "../layout/ScheduleView";
 import EditActivityModal from "../modals/EditActivityModal";
 import ConflictModal from "../modals/ConflictModal";
-import { useWeekendPlannerContext } from "../../contexts/WeekendPlannerContext";
+import { useSchedulePlannerContext } from "../../contexts/SchedulePlannerContext";
 
 interface ScheduleTabProps {
     onEditActivityTime?: (
@@ -18,7 +18,7 @@ const ScheduleTab: React.FC<ScheduleTabProps> = ({ onEditActivityTime }) => {
         removeActivityFromSchedule,
         moveActivity,
         checkMoveConflicts,
-    } = useWeekendPlannerContext();
+    } = useSchedulePlannerContext();
     const [editingScheduledActivity, setEditingScheduledActivity] = useState<{
         id: string;
         activity: any;

@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({
             <div className="header-content">
                 <h1 className="app-title">
                     <Calendar className="title-icon" size={32} />
-                    Weekendly
+                    Schedule Forge
                 </h1>
                 <p className="app-subtitle">Plan your perfect weekend</p>
 

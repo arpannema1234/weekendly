@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import type { Activity } from "./types";
 import { ACTIVITIES } from "./data/activities";
 import {
-    WeekendPlannerProvider,
-    useWeekendPlannerContext,
-} from "./contexts/WeekendPlannerContext";
+    SchedulePlannerProvider,
+    useSchedulePlannerContext,
+} from "./contexts/SchedulePlannerContext";
 
 import Toast from "./components/ui/Toast";
 import Header from "./components/ui/Header";
@@ -33,7 +33,7 @@ function AppContent() {
         checkActivityConflicts,
         suggestAlternativeTime,
         addActivityToScheduleForced,
-    } = useWeekendPlannerContext();
+    } = useSchedulePlannerContext();
 
     const [selectedDateKey, setSelectedDateKey] = useState<string>("");
     const [calendarSelectedDates, setCalendarSelectedDates] = useState<
@@ -69,7 +69,7 @@ function AppContent() {
 
     // Custom activities state
     const [customActivities, setCustomActivities] = useState<Activity[]>(() => {
-        const saved = localStorage.getItem("weekendly-custom-activities");
+        const saved = localStorage.getItem("schedule-forge-custom-activities");
         return saved ? JSON.parse(saved) : [];
     });
 
@@ -269,7 +269,7 @@ function AppContent() {
         setCustomActivities((prev) => {
             const updated = [...prev, activity];
             localStorage.setItem(
-                "weekendly-custom-activities",
+                "schedule-forge-custom-activities",
                 JSON.stringify(updated)
             );
             return updated;
@@ -289,7 +289,7 @@ function AppContent() {
                     : activity
             );
             localStorage.setItem(
-                "weekendly-custom-activities",
+                "schedule-forge-custom-activities",
                 JSON.stringify(updated)
             );
             return updated;
@@ -393,9 +393,9 @@ function AppContent() {
 
 function App() {
     return (
-        <WeekendPlannerProvider>
+        <SchedulePlannerProvider>
             <AppContent />
-        </WeekendPlannerProvider>
+        </SchedulePlannerProvider>
     );
 }
 
