@@ -1,0 +1,138 @@
+/* Confirmation Dialog Styles */
+.confirmation-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.confirmation-dialog {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 16px 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dialog-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.close-button:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.dialog-content {
+    text-align: left;
+    padding: 20px 24px;
+}
+
+.dialog-content p {
+    margin: 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+.dialog-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px 24px 24px;
+    justify-content: flex-end;
+}
+
+.cancel-button,
+.confirm-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.cancel-button {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.cancel-button:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.confirm-button {
+    background: #4caf50;
+    color: white;
+}
+
+.confirm-button:hover {
+    background: #45a049;
+}
+
+.confirm-button.dangerous {
+    background: #f44336;
+}
+
+.confirm-button.dangerous:hover {
+    background: #d32f2f;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .confirmation-dialog-overlay {
+        padding: 16px;
+    }
+
+    .confirmation-dialog {
+        max-width: 100%;
+    }
+
+    .dialog-header,
+    .dialog-content,
+    .dialog-actions {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .dialog-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-button,
+    .confirm-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

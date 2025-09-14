@@ -1,0 +1,81 @@
+.theme-selector {
+    padding: 20px 40px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.theme-selector h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.theme-selector p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+.themes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.theme-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(50% - 8px);
+    min-width: 280px;
+}
+
+.theme-card:hover {
+    border-color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.theme-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.theme-info {
+    flex: 1;
+}
+
+.theme-name {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.theme-description {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .theme-selector {
+        padding: 16px 24px;
+    }
+
+    .theme-card {
+        flex: 1 1 100%;
+        min-width: auto;
+        padding: 12px;
+    }
+}

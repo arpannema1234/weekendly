@@ -1,0 +1,121 @@
+.activity-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: #4caf50;
+}
+
+.activity-card.selected {
+    border-color: #4caf50;
+    background: #f8fff9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.activity-title-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #333;
+    line-height: 1.2;
+}
+
+.activity-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.activity-meta {
+    display: flex;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: #888;
+    flex-wrap: wrap;
+}
+
+.activity-duration {
+    background: #e3f2fd;
+    padding: 2px 6px;
+    border-radius: 12px;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.activity-mood {
+    background: #f3e5f5;
+    padding: 2px 6px;
+    border-radius: 12px;
+    color: #7b1fa2;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Edit Button Styles */
+.edit-button {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.8);
+    z-index: 2;
+}
+
+.activity-card:hover .edit-button {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.edit-button:hover {
+    background: #f0f8ff;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
